@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+  </head>
+  <style></style>
+  <body>
+    <button id="btnget">get</button>
+    <button id="btnpost">post</button>
+    <script>
+      $("#btnget").on("click", function () {
+        $.ajax({
+          method: "get",
+          url: "http://www.liulongbin.top:3006/api/get",
+          data: {
+            name: "zhang",
+            age: 39,
+          },
+          success: function (res) {
+            console.log(res);
+          },
+        });
+      });
+      $("#btnpost").on("click", function () {
+        $.ajax({
+          method: "post",
+          url: "http://www.liulongbin.top:3006/api/post",
+          data: {
+            name: "zhang",
+            age: 39,
+          },
+          success: function (res) {
+            console.log(res);
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
